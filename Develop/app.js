@@ -2,6 +2,8 @@ const path = require("path");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Manager = require("./lib/Manager")
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 
 const teamMembers = [];
@@ -60,6 +62,8 @@ function appMenue() {
                                     break;
                 case "Intern" : addIntern();
                                     break;
+                case "I don't want to add any more" : buildTeam();
+                                    break;
                default: buildTeam();
             }
         })
@@ -114,12 +118,12 @@ function appMenue() {
             },
             {
                 type: "input",
-                name: "internGitHub",
-                message: "What is the Intern GitHub username"
+                name: "internSchool",
+                message: "What is the Intern School Name"
             }
 
         ]).then(answer => {
-            const intern = new Engineer(answer.internName,answer.internId,answer.internEmail, answer.internGitHub);
+            const intern = new Intern(answer.internName,answer.internId,answer.internEmail, answer.internSchool);
             teamMembers.push(intern);
             createTeam();
         })
