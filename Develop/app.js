@@ -4,8 +4,10 @@ const inquirer = require("inquirer");
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-
-
+// specify where the output should go
+const pathToFile = path.resolve(__dirname, "output", "team.html");
+// requiring htmlRender file so that we can access the render function inside that file
+const render = require("./lib/htmlRender");
 const teamMembers = [];
 
 
@@ -62,8 +64,8 @@ function appMenue() {
                                     break;
                 case "Intern" : addIntern();
                                     break;
-                case "I don't want to add any more" : buildTeam();
-                                    break;
+                // case "I don't want to add any more" : buildTeam();
+                //                     break;
                default: buildTeam();
             }
         })
