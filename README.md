@@ -16,7 +16,7 @@ which can accessed to get team members emails and GitHub profiles.
 
 # Screenshots
 
-<img src = "./screenshot1.PNG">
+<img src = "screenshot1.PNG">
 
 # Repo Details 
 https://github.com/baredh821/DeveloperProfileGenerator
